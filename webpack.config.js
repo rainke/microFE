@@ -50,6 +50,10 @@ module.exports = {
       {
         test: /\.ts$/,
         loader: 'ts-loader'
+      },
+      {
+        test:/\.css/,
+        loader: path.resolve(__dirname, 'loader.js')
       }
     ]
   },
