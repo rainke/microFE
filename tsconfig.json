@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-      "target": "esnext",
-      "module": "esnext",
+      "target": "es6",
+      "module": "commonjs",
       "strict": true,
       "jsx": "preserve",
       "importHelpers": true,
@@ -20,7 +20,8 @@
       "apps/**/*.ts"
     ],
     "include": [
-      "apps/**/*.ts"
+      "apps/**/*.ts",
+      "server/**/*.ts"
     ],
     "exclude": ["node_modules"]
   }
