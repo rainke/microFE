@@ -10,7 +10,7 @@ module.exports = {
     webcomp: [
       `webpack-dev-server/client?http://127.0.0.1:${port}/sockjs-node`,
       'webpack/hot/dev-server',
-      './apps/webcomp/index.ts'
+      './apps/webcomp/App.tsx'
     ]
   },
   output: {
@@ -42,14 +42,19 @@ module.exports = {
       poll: false
     }
   },
+  devtool : 'cheap-module-source-map',
   resolve: {
-    extensions: ['.js', '.ts', '.json']
+    extensions: ['.js', '.ts','.tsx', '.json']
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
         loader: 'ts-loader'
+      },
+      {
+        test: /\.tsx$/,
+        loader: 'babel-loader!ts-loader'
       },
       {
         test:/\.css/,
